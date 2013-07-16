@@ -53,10 +53,10 @@ function average(a) {
 }
 
 function min(a) {
-	var s=a[0];
+	var s=1*a[0];
 	for (var i=1;i<a.length;i++) {
-		if (a[i]<s) {
-			s=a[i];
+		if (1*a[i]<s) {
+			s=1*a[i];
 		}
 	}
 	return s;
@@ -64,10 +64,10 @@ function min(a) {
 
 
 function max(a) {
-	var s=a[0];
+	var s=1*a[0];
 	for (var i=1;i<a.length;i++) {
-		if (a[i]>s) {
-			s=a[i];
+		if (1*a[i]>s) {
+			s=1*a[i];
 		}
 	}
 	return s;
