@@ -24,7 +24,8 @@ function tablecalcVal(x,y,table) {
 					if (!isNaN(m)) {
 						v=m;
 					} else {
-						v="notnum";
+						//v="notnum";
+						v="0";
 					}
 				}
 			}
@@ -134,7 +135,7 @@ function round(num,digits) {
 	for (var i=0;i<digits;i++) {
 		d*=10;
 	}
-	return Math.round(num*d)/d;
+	return (Math.round(num*d)/d).toFixed(digits);
 }
 
 function nop() {
