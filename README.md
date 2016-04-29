@@ -1,7 +1,7 @@
 tablecalc
 =========
 
-dokuwiki plugin nejen pro FO. Časem bude patrně nahrazen.
+Dokuwiki plugin which adds limited spreadsheet functionality to tables. See
+the original documentation page at: https://www.dokuwiki.org/plugin:tablecalc
 
-Fork: https://www.dokuwiki.org/plugin:tablecalc
-
+Forked from https://github.com/pirati-cz/tablecalc
