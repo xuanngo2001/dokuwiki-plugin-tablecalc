@@ -1,10 +1,10 @@
 <?php
 // must be run within Dokuwiki
 if(!defined('DOKU_INC')) die();
- 
+
 if(!defined('DOKU_PLUGIN')) define('DOKU_PLUGIN',DOKU_INC.'lib/plugins/');
 require_once(DOKU_PLUGIN.'syntax.php');
- 
+
 /**
  * All DokuWiki plugins to extend the parser/rendering mechanism
  * need to inherit from this class
@@ -24,17 +24,17 @@ class syntax_plugin_tablecalc extends DokuWiki_Syntax_Plugin {
                 'url'    => 'http://narezka.ru/tablecalc',
                 );
     }
- 
+
     function getType() { return 'substition'; }
     function getSort() { return 1213; }
- 
+
     /**
      * Connect pattern to lexer
      */
     function connectTo($mode) {
             $this->Lexer->addSpecialPattern("~~=[_a-z\ A-Z0-9\%\:\.,\\\/\*\-\+\(\)\&\|#><!=;]*~~", $mode, 'plugin_tablecalc');
     }
- 
+
     /**
      * Handle the match
      */
@@ -67,7 +67,7 @@ class syntax_plugin_tablecalc extends DokuWiki_Syntax_Plugin {
 		return array('formula'=>$match, 'divid'=>'__tablecalc'.$this->id_index);
 
     }
- 
+
     function render($mode, &$renderer, $data) {
 		global $INFO, $ID, $conf;
 		if($mode == 'xhtml'){

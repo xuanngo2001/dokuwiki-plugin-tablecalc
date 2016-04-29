@@ -118,7 +118,7 @@ function range(x1,y1,x2,y2) {
 		}
 		result+=")"
 	}
-	return eval(result);	
+	return eval(result);
 }
 
 function count(a) {
@@ -249,17 +249,17 @@ function tablecalc(divID, formula, nodefer) {
 					var tmp=to[1];
 					to[1]=from[1];
 					from[1]=tmp;
-				}			
+				}
 				for (var fx=from[0];fx<=to[0];fx++) {
 					for (var fy=from[1];fy<=to[1];fy++) {
 						if ((fx==cCol) && (fy==cRow)) {continue;}
 						var tmp=tablecalcVal(fx,fy,tmp_table);
-						//alert("member["+fx+","+fy+"]="+tmp);						
+						//alert("member["+fx+","+fy+"]="+tmp);
 						if (tmp == 'notnum') {
 							tablecalcAddDefer(divID,oFormula);
 							if (!nodefer) {
 								tablecalcProcessDefer();
-							}							
+							}
 							return false;
 						}
 						if (tmp!='notset') {
@@ -291,11 +291,11 @@ function tablecalc(divID, formula, nodefer) {
 			formula=formula.replace(matchA[i],result);
 		}
 	}
-	
+
 	//formula=formula.replace(/\(([a-z0-9_]+)\)/g,"('$1')");
 	//alert("Evaluating [nm]: "+formula);
 	//formula=formula.replace(/\#([^\(\);,]+)/,"'$1'");
-	formula=formula.replace(/;/g,",");	
+	formula=formula.replace(/;/g,",");
 //	alert("Evaluating: "+formula);
 	var rc;
 	try {
@@ -317,7 +317,7 @@ function tablecalc(divID, formula, nodefer) {
 function tablecalcAddDefer(divID,formula) {
 	if (typeof tablecalc_defer[divID] == 'undefined') {
 		tablecalc_defer[divID]=formula;
-		//alert("Added defer: "+divID+"=>"+tablecalc_defer[divID]);		
+		//alert("Added defer: "+divID+"=>"+tablecalc_defer[divID]);
 	}
 }
 
