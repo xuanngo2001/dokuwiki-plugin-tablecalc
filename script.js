@@ -2,6 +2,7 @@ var tablecalc_table;
 var tablecalc_crow;
 var tablecalc_ccol;
 var tablecalc_labels = new Array();
+var tablecalc_tags = new Array();
 var tablecalc_defer = new Array();
 
 function tablecalcXY(st) {
@@ -93,6 +94,30 @@ function col() {
 
 function row() {
     return tablecalc_crow;
+}
+
+function tag(name) {
+    if (typeof tablecalc_tags[name] == "undefined") {
+        tablecalc_tags[name] = { row: row(), column: col() }
+    }
+
+    return "";
+}
+
+function tag_col(name) {
+    if (typeof tablecalc_tags[name] == "undefined") {
+        return 0;
+    }
+
+    return tablecalc_tags[name].column;
+}
+
+function tag_row(name) {
+    if (typeof tablecalc_tags[name] == "undefined") {
+        return 0;
+    }
+
+    return tablecalc_tags[name].row
 }
 
 function cell(x, y) {
